@@ -50,3 +50,22 @@ a {
 .hidden {
   display: none !important;
 }
+
+@media (min-width: 768px) {
+  body {
+    padding: 0 4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    padding: 0 4rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  body {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+}

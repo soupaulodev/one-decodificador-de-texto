@@ -18,30 +18,30 @@
   </head>
   <body>
     <main>
-      <section>
+      <section class="input-section">
         <header>
           <img class="logo" src="./assets/logo-alura.svg" alt="Logo Alura" />
         </header>
         <form>
           <textarea name="text" placeholder="Digite seu texto"></textarea>
 
-          <p class="info">
-            <img src="./assets/icon-info.svg" alt="Informação" />
-            <span>Apenas letras minúsculas e sem acento. </span>
-          </p>
-          <div class="buttons">
-            <button class="button button-filled" onclick="encrypt()">
-              Criptografar
-            </button>
-            <button class="button" onclick="desencrypt()">
-              Descriptografar
-            </button>
-          </div>
+        </form>
+        <p class="info">
+          <img src="./assets/icon-info.svg" alt="Informação" />
+          <span>Apenas letras minúsculas e sem acento. </span>
+        </p>
+        <footer>
+          <button class="button button-filled" onclick="encrypt()">
+            Criptografar
+          </button>
+          <button class="button" onclick="desencrypt()">
+            Descriptografar
+          </button>
         </form>
       </section>
-      <section>
+      <section class="output-section">
         <div class="no-output-container hidden">
-          <img src="./assets/undraw_no_data_qbuo.svg" alt="Sem Texto" />
+          <img id="no-output-illustration" src="./assets/undraw_no_data_qbuo.svg" alt="Sem Texto" />
           <h1>Nenhum texto encontrado</h1>
           <p>Digite o texto que deseja criptografar ou descriptografar.</p>
         </div>
@@ -52,8 +52,13 @@
             nunc ut laoreet. Eget diam mauris quam quisque ut eget fringilla sit
             elit. Libero, sodales duis fames id diam feugiat aliquet non
             egestas.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci
+            montes, sit et diam risus scelerisque vitae est. Tortor maecenas
+            nunc ut laoreet. Eget diam mauris quam quisque ut eget fringilla sit
+            elit. Libero, sodales duis fames id diam feugiat aliquet non
+            egestas.
           </p>
-          <button class="button" onclick="copyText()">Copiar</button>
+          <button class="button" id="copy-button" onclick="copyText()">Copiar</button>
         </div>
       </section>
     </main>
