@@ -11,27 +11,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="stylesheet" href="./styles/globalStyles.css" />
-    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="stylesheet" href="./src/styles/globalStyles.css" />
+    <link rel="stylesheet" href="./src/styles/styles.css" />
 
     <title>Decodificador de Texto - Alura Challenges Oracle ONE</title>
   </head>
-  <body>
-    <main>
-      <section class="input-section">
-        <header>
-          <img class="logo" src="./assets/logo-alura.svg" alt="Logo Alura" />
-        </header>
-        <form>
-          <textarea name="text" placeholder="Digite seu texto"></textarea>
 
+  <body class="scrollable">
+    <header>
+      <img id="logo" src="./src/assets/alura-logo.svg" alt="Logo Alura" />
+    </header>
+
+    <main>
+      <section id="input-section">
+        <form>
+          <label for="input-field" class="sr-only">Insira seu text</label>
+          <textarea id="input-field" class="scrollable" name="input-field" placeholder="Digite seu texto"></textarea>
+          <p id="input-info">
+            <img src="./src/assets/info-icon.svg" alt="Icone com um simbolo exclamação na cor branca" />
+            <span>Apenas letras minúsculas e sem acento. </span>
+          </p>
         </form>
-        <p class="info">
-          <img src="./assets/icon-info.svg" alt="Informação" />
-          <span>Apenas letras minúsculas e sem acento. </span>
-        </p>
-        <footer>
-          <button class="button button-filled" onclick="encrypt()">
+        <footer id="input-footer">
+          <button class="button button-primary" onclick="encrypt()">
             Criptografar
           </button>
           <button class="button" onclick="desencrypt()">
@@ -39,14 +41,16 @@
           </button>
         </form>
       </section>
-      <section class="output-section">
-        <div class="no-output-container hidden">
+
+      <section id="output-section">
+        <div id="no-output-container" class="hidden">
           <img id="no-output-illustration" src="./assets/undraw_no_data_qbuo.svg" alt="Sem Texto" />
           <h1>Nenhum texto encontrado</h1>
           <p>Digite o texto que deseja criptografar ou descriptografar.</p>
         </div>
-        <div class="output-container">
-          <p class="output-field">
+
+        <div id="output-container">
+          <p id="output-field" class="scrollable">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci
             montes, sit et diam risus scelerisque vitae est. Tortor maecenas
             nunc ut laoreet. Eget diam mauris quam quisque ut eget fringilla sit
@@ -58,15 +62,15 @@
             elit. Libero, sodales duis fames id diam feugiat aliquet non
             egestas.
           </p>
-          <button class="button" id="copy-button" onclick="copyText()">Copiar</button>
+          <button class="button button-primary" id="copy-button" onclick="copyText()">Copiar</button>
         </div>
       </section>
     </main>
 
-    <footer class="author">
-      <p class="footer-text">Feito com ♥ por <a href="https://soupaulodev.com.br">Paulo Marques</a></p>
+    <footer id="footer-author">
+      <p>Feito com ♥ por <a href="https://soupaulodev.com.br">Paulo Marques</a></p>
     </footer>
 
-    <script src="./scripts/index.js"></script>
+    <script src="./src/scripts/index.js"></script>
   </body>
 </html>
