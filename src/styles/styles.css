@@ -226,10 +226,11 @@ form {
 
   #input-section {
     flex: 1;
+    height: calc(100vh - 34rem);
   }
 
   #input-field {
-    height: 52.6rem;
+    height: 100%;
   }
 
   #output-section {
@@ -238,7 +239,7 @@ form {
   }
 
   #output-container {
-    height: 73rem;
+    height: calc(100vh - 17.6rem);
   }
 
   #output-field {
