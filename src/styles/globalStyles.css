@@ -102,6 +102,7 @@ a {
 @media (min-width: 1024px) {
   body {
     padding: 4rem;
+    height: 100vh;
   }
 }
 
