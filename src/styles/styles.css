@@ -168,11 +168,14 @@ form {
   color: var(--blue-200);
   text-align: center;
   text-decoration: underline;
-  transition: filter 2s;
+  
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
 }
 
 #footer-author a:hover {
   filter: brightness(1.15);
+  -webkit-filter: brightness(1.15);
 }
 
 @media (min-width: 768px) {
