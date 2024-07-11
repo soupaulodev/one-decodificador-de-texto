@@ -167,6 +167,9 @@ form {
 
   color: var(--blue-200);
   text-align: center;
+}
+
+#footer-author a {
   text-decoration: underline;
   
   -webkit-transition: all 1s ease;
