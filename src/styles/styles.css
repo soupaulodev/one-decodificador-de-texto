@@ -169,14 +169,14 @@ form {
   text-align: center;
 }
 
-#footer-author a {
+a {
   text-decoration: underline;
   
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
 }
 
-#footer-author a:hover {
+a:hover {
   filter: brightness(1.15);
   -webkit-filter: brightness(1.15);
 }
