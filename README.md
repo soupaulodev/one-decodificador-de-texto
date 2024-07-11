@@ -36,9 +36,9 @@ O projeto consiste em uma aplicação web que permite aos usuários criptografar
 │ │ └── illustration.svg
 │ ├── scripts/
 │ │ └── index.js
-│ └──── styles/
-│ │ └── globalStyles.css
-│ └──── styles.css
+│ ├── styles/
+│ │ ├── globalStyles.css
+│ │ └── styles.css
 └── README.md
 ```
 
