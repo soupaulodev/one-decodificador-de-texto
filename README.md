@@ -2,6 +2,8 @@
 
 Este é um projeto desenvolvido como parte do desafio Oracle ONE da Alura, focado em criptografia e descriptografia de texto de forma simples e direta.
 
+Acesse: https://soupaulodev.github.io/one-decodificador-de-texto/
+
 ## Descrição
 
 O projeto consiste em uma aplicação web que permite aos usuários criptografar e descriptografar mensagens de texto. Utilizando HTML, CSS e JavaScript, a Crypta oferece uma interface intuitiva e acessível para suas funcionalidades principais.
