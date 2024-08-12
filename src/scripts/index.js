@@ -87,25 +87,24 @@ function copyText() {
 function textEncrypter(text) {
   let textConverted = Array.from(text);
 
-  textConverted = textConverted
+  return textConverted
     .map((caracter) => {
-      if (caracter == "e") {
-        return "enter";
-      } else if (caracter == "i") {
-        return "imes";
-      } else if (caracter == "a") {
-        return "ai";
-      } else if (caracter == "o") {
-        return "ober";
-      } else if (caracter == "u") {
-        return "ufat";
-      } else {
-        return caracter;
+      switch (caracter) {
+        case "e":
+          return "enter";
+        case "i":
+          return "imes";
+        case "a":
+          return "ai";
+        case "o":
+          return "ober";
+        case "u":
+          return "ufat";
+        default:
+          return caracter;
       }
     })
     .join("");
-
-  return textConverted;
 }
 
 /**
@@ -115,13 +114,10 @@ function textEncrypter(text) {
  * @return {string} The decrypted text.
  */
 function textDecrypter(text) {
-  let decryptedText = text;
-
-  decryptedText = decryptedText.replace(/enter/g, "e");
-  decryptedText = decryptedText.replace(/imes/g, "i");
-  decryptedText = decryptedText.replace(/ai/g, "a");
-  decryptedText = decryptedText.replace(/ober/g, "o");
-  decryptedText = decryptedText.replace(/ufat/g, "u");
-
-  return decryptedText;
+  return text
+    .replace(/enter/g, "e")
+    .replace(/imes/g, "i")
+    .replace(/ai/g, "a")
+    .replace(/ober/g, "o")
+    .replace(/ufat/g, "u");
 }
