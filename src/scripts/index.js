@@ -1,4 +1,7 @@
 const buttons = document.querySelectorAll(".button");
+const outputContainer = document.getElementById("output-container");
+const noOutputContainer = document.getElementById("no-output-container");
+const outputField = document.getElementById("output-field");
 
 buttons.forEach((button) => {
   button.addEventListener("click", (event) => {
@@ -23,18 +26,20 @@ buttons.forEach((button) => {
  * @return {void}
  */
 function encrypt() {
-  const textInput = document.getElementById("input-field").value;
+  let textInput = document.getElementById("input-field").value;
 
   if (textInput == "") {
-    document.getElementById("output-container").classList.add("hidden");
-    document.getElementById("no-output-container").classList.remove("hidden");
+    outputContainer.classList.add("hidden");
+    noOutputContainer.classList.remove("hidden");
     return;
   }
 
-  const textEncrypted = textEncrypter(textInput);
-  document.getElementById("output-field").innerHTML = textEncrypted;
-  document.getElementById("output-container").classList.remove("hidden");
-  document.getElementById("no-output-container").classList.add("hidden");
+  textInput = checkText(textInput);
+
+  const textEncrypted = textEncrypter(textInput.trim().toLowerCase());
+  outputField.innerHTML = textEncrypted;
+  outputContainer.classList.remove("hidden");
+  noOutputContainer.classList.add("hidden");
 }
 
 /**
@@ -44,18 +49,20 @@ function encrypt() {
  * @return {void}
  */
 function decrypt() {
-  const textInput = document.getElementById("input-field").value;
+  let textInput = document.getElementById("input-field").value;
 
   if (textInput == "") {
-    document.getElementById("output-container").classList.add("hidden");
-    document.getElementById("no-output-container").classList.remove("hidden");
+    outputContainer.classList.add("hidden");
+    noOutputContainer.classList.remove("hidden");
     return;
   }
 
+  textInput = checkText(textInput);
+
   const textDecrypted = textDecrypter(textInput);
-  document.getElementById("output-field").innerHTML = textDecrypted;
-  document.getElementById("output-container").classList.remove("hidden");
-  document.getElementById("no-output-container").classList.add("hidden");
+  outputField.innerHTML = textDecrypted;
+  outputContainer.classList.remove("hidden");
+  noOutputContainer.classList.add("hidden");
 }
 
 /**
@@ -64,7 +71,7 @@ function decrypt() {
  * @return {void}
  */
 function copyText() {
-  const text = document.getElementById("output-field").innerText;
+  const text = outputField.innerText;
 
   if (text == "") {
     return;
@@ -124,4 +131,38 @@ function textDecrypter(text) {
     .replace(/ai/g, "a")
     .replace(/ober/g, "o")
     .replace(/ufat/g, "u");
+}
+
+/**
+ * Checks if the given text is valid according to specific rules and returns the text if valid.
+ *
+ * @param {string} text - The text to be checked.
+ * @return {string|undefined} The text if it is valid, otherwise undefined.
+ */
+function checkText(text) {
+  const regexUpper = /[A-Z]/;
+  const regexSymbol = /[!@#$%^&*(),.?":{}|<>[\]\\\-+=_;~`]/;
+  const regexAccents = /[áàâãäåçèéêëíîïñóòôõöøúùûüýÿ]/i;
+
+  if (
+    regexUpper.test(text) &&
+    regexSymbol.test(text) &&
+    regexAccents.test(text)
+  ) {
+    alert(
+      "Por favor, insira apenas letras minúsculas e sem acentos ou caracteres especiais"
+    );
+    return;
+  } else if (regexUpper.test(text)) {
+    alert("Por favor, insira apenas letras minúsculas");
+    return;
+  } else if (regexSymbol.test(text)) {
+    alert("Por favor, não insira caracteres especiais");
+    return;
+  } else if (regexAccents.test(text)) {
+    alert("Por favor, não insira acentos");
+    return;
+  } else {
+    return text;
+  }
 }
