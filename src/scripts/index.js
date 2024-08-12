@@ -76,6 +76,10 @@ function copyText() {
   }
 
   navigator.clipboard.writeText(text);
+
+  const copyButton = document.getElementById("copy-button");
+  copyButton.innerText = "Copiado!";
+  setTimeout(() => (copyButton.innerText = "Copiar"), 2000);
 }
 
 /**
